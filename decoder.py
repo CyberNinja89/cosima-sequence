@@ -8,9 +8,9 @@ GREEN = '\x1B[32m'
 END = '\x1B[0m'
 
 
-def decypher(d, b):
+def decypher(g, b):
     final = ""
-    if d:
+    if g:
         seq = input(GREEN+'Enter Your Genetic Sequence: '+END)
         final = ascii(binary(seq))
     if b:
@@ -40,7 +40,7 @@ def ascii(binary):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Cosima's Genome Decryption")
     parser.add_argument('-b', '--binary', help="Convert Binary Sequence to ASCII", action="store_true")
-    parser.add_argument('-d', '--dna', help="Convert Human Base Pairs to ASCII", action="store_true")
+    parser.add_argument('-g', '--genome', help="Convert Human Base Pairs to ASCII", action="store_true")
     args = parser.parse_args()
 
-    decypher(args.dna, args.binary)
+    decypher(args.genome, args.binary)
